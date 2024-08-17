@@ -1,0 +1,85 @@
+
+@import url(./gameCards.css);
+@import url(./header.css);
+@import url(./default.css);
+@import url(./loader.css);
+@import url(./scrollbar.css);
+
+/* @import url(./circles.css); */
+
+body {
+    background: var(--background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.body-style {
+    display: flex;
+    flex-direction: column;
+    max-width: 1920px;
+    width: 100%;
+    margin: 0 50px;
+}
+
+main {
+    margin: 0 50px;
+    z-index: 1;
+}
+
+/* --------------------------*/
+
+p {
+    color: var(--light-grey);
+}
+
+/* --------------------------*/
+
+.curved-background1 {
+    max-width: 3440px;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    z-index: -3;
+    filter: drop-shadow(0px 10px 20px var(--main-green));
+}
+
+.curved-shadow {
+    width: 100%;
+    height: auto;
+}
+
+.curved-background2 {
+    max-width: 3440px;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    z-index: -3;
+    filter: drop-shadow(0px 10px 20px var(--light-grey));
+
+}
+
+.curved-background3 {
+    max-width: 3440px;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    z-index: -3;
+    filter: drop-shadow(0px 10px 20px var(--background));
+
+}
+
+
+/* --------------------------*/
+
+
+
+@media screen and (max-width: 919px) { 
+    main { 
+        margin: 0 25px;
+    }
+}

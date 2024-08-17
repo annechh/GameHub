@@ -1,0 +1,36 @@
+
+
+.game-card-styler {
+    display: flex;
+    justify-content: center;
+    margin-top: 300px;
+    margin-bottom: 100px;
+}
+
+.game-card-container {
+    max-width: 100vw;
+    width: 100%;
+    /* margin: auto; */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+}
+
+.game-image-container img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.price-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+@media screen and (max-width: 919px) { 
+    .game-card-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
