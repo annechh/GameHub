@@ -38,8 +38,8 @@ export function createDivElement({className = '', id = ''}) {
     return elementDiv;
 }
 
-export function createHeadingElement({className = '', tag, textContent}) {
-    const elementHeading = document.createElement(tag);
+export function createHeadingElement({className = '', htmlElement, textContent}) {
+    const elementHeading = document.createElement(htmlElement);
     elementHeading.textContent = textContent;
     if (className) {
         elementHeading.classList.add(className);

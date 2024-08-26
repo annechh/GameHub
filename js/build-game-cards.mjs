@@ -22,7 +22,7 @@ export function buildGameCardHtml(game) {
 
     const cardTitle = createHeadingElement({
         className: 'card-title', 
-        tag: 'h2', 
+        htmlElement: 'h2', 
         textContent: game.title});
 
     const cardImageContainer = createDivElement({
