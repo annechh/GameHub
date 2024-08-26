@@ -89,8 +89,18 @@ p, h2 {
 
 
 
-@media screen and (max-width: 919px) { 
+@media screen and (max-width: 1200px) { 
     main { 
         margin: 0 25px;
+    }
+    .curved-background1, .curved-background2, .curved-background3 {
+        top: 100px
+    }
+}
+
+@media screen and (max-width: 1920px) { 
+    
+    .curved-background1, .curved-background2, .curved-background3 {
+        top: 100px
     }
 }
