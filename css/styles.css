@@ -37,6 +37,16 @@ p, h2 {
 
 /* --------------------------*/
 
+.hide-drop-shadow {
+    background: var(--background);
+    position: absolute;
+    top: 0;
+    max-height: 100px;
+    height: 100%;
+    width: 100%;
+    z-index: -2;
+}
+
 .curved-background1 {
     max-width: 3440px;
     width: 100%;
