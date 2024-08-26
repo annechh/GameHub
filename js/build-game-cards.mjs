@@ -10,24 +10,45 @@ import { addPulseAnimation } from "./animations.mjs";
 
 export function buildGameCardHtml(game) {
 
-    const gameCard = createDivElement('game-card', 'gameCard') 
+    const gameCard = createDivElement({
+        className: 'game-card',
+        id: 'gameCard'
+    }) 
 
-    const cardTitleContainer = createDivElement('card-title-container', 'cardTitleContainer');
+    const cardTitleContainer = createDivElement({
+        className: 'card-title-container', 
+        id: 'cardTitleContainer'
+    });
 
-    const cardTitle = createHeadingElement('card-title', 'h2', game.title);
+    const cardTitle = createHeadingElement({
+        className: 'card-title', 
+        tag: 'h2', 
+        textContent: game.title});
 
-    const cardImageContainer = createDivElement('game-image-container')
+    const cardImageContainer = createDivElement({
+        className: 'game-image-container'
+    })
 
-    const cardImage = createImageElement('card-image', '', game.image.url, game.description);
+    const cardImage = createImageElement({
+        className: 'card-image',
+        src: game.image.url,
+        alt: game.description});
 
-    const priceContainer = createDivElement('price-container', '')
+    const priceContainer = createDivElement({
+        className: 'price-container'
+    })
 
-    const cardPrice = createElementParagraph('price', game.price)
+    const cardPrice = createElementParagraph({
+        className: 'price', 
+        textContent: game.price})
         if (game.onSale === true) {
             cardPrice.style.textDecoration = 'line-through';
         }
 
-    const cardDiscountPrice = createElementParagraph('discount-price', game.discountedPrice);
+    const cardDiscountPrice = createElementParagraph({
+        className: 'discount-price', 
+        textContent: game.discountedPrice
+    });
         if (game.onSale === false) {
             cardDiscountPrice.textContent = '';
         } 
@@ -35,15 +56,20 @@ export function buildGameCardHtml(game) {
             cardDiscountPrice.style.color = 'var(--light-green)';
         }
     
-    const onSaleTitleContainer1 = createDivElement('on-sale-title-container1', '')
+    const onSaleTitleContainer1 = createDivElement({
+        className: 'on-sale-title-container1'
+    })
         if (game.onSale === false) {
             onSaleTitleContainer1.style.display = 'none';
         }
-
-    const onSaleTitleContainer2 = createDivElement('on-sale-title-container2', '');
         
         
-    const onSaleStamp = createImageElement('sale-img', 'saleImg', './images/sale.png', 'On sale stamp');
+    const onSaleStamp = createImageElement({
+        className: 'sale-img',
+        id: 'saleImg',
+        src: './images/sale.png',
+        alt: 'On sale stamp'
+    });
         if (game.onSale === true) {
             addPulseAnimation(onSaleTitleContainer1);
         }
@@ -57,7 +83,6 @@ export function buildGameCardHtml(game) {
     cardImageContainer.appendChild(cardImage);
     cardTitleContainer.appendChild(cardTitle);
     onSaleTitleContainer1.appendChild(onSaleStamp);
-    // onSaleTitleContainer1.appendChild(onSaleTitleContainer2);
     gameCard.append(cardImageContainer, onSaleTitleContainer1, cardTitleContainer, priceContainer);
 
     return gameCard;
