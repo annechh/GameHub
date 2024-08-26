@@ -2,7 +2,6 @@
 import { game_URL, fetchApi } from "./fetch.mjs";
 import { buildGameCardHtml } from "./build-game-cards.mjs";
 
-
 function displayGames(games) {
     let displayGames = document.getElementById('gameCardContainer');
         displayGames.innerHTML = '';

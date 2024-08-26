@@ -4,6 +4,8 @@ import {
     createHeadingElement,
     createElementParagraph} from "./htmlElements.mjs";
 
+import { addPulseAnimation } from "./animations.mjs";
+
 
 
 export function buildGameCardHtml(game) {
@@ -32,7 +34,19 @@ export function buildGameCardHtml(game) {
         if (game.onSale === true) {
             cardDiscountPrice.style.color = 'var(--light-green)';
         }
+    
+    const onSaleTitleContainer1 = createDivElement('on-sale-title-container1', '')
+        if (game.onSale === false) {
+            onSaleTitleContainer1.style.display = 'none';
+        }
 
+    const onSaleTitleContainer2 = createDivElement('on-sale-title-container2', '');
+        
+        
+    const onSaleStamp = createImageElement('sale-img', 'saleImg', './images/sale.png', 'On sale stamp');
+        if (game.onSale === true) {
+            addPulseAnimation(onSaleTitleContainer1);
+        }
     // const favorite = ;
 
     // const description = ;
@@ -42,9 +56,11 @@ export function buildGameCardHtml(game) {
     priceContainer.append(cardPrice, cardDiscountPrice)
     cardImageContainer.appendChild(cardImage);
     cardTitleContainer.appendChild(cardTitle);
-    gameCard.append(cardTitleContainer, cardImageContainer, priceContainer);
+    onSaleTitleContainer1.appendChild(onSaleStamp);
+    // onSaleTitleContainer1.appendChild(onSaleTitleContainer2);
+    gameCard.append(cardImageContainer, onSaleTitleContainer1, cardTitleContainer, priceContainer);
 
     return gameCard;
 }
 
-
+console.log('hello');
